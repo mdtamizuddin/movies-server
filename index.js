@@ -6,7 +6,7 @@ require('dotenv').config()
 const app = express()
 app.use(express.json())
 app.use(cors())
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 const URI = process.env.DB_URI
 
@@ -28,7 +28,9 @@ app.use('/api/upload', require('./Routers/uploadImage'))
 // Image Uploading Router
 app.use('/api/movies', require("./Routers/moviesRouter"))
 app.use('/api/categorys', require("./Routers/category"))
-
+app.get('/',(req , res) => {
+    res.send({message: "Server Is Running"})
+})
 
 app.listen(5000, () => {
     console.log("Server Is Rinnging on http://localhost:5000")
