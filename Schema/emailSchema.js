@@ -17,6 +17,10 @@ const emailSchema = new mongoose.Schema({
         type: Number,
         default: 15
     },
+    avaiable: {
+        type: Number,
+        default: 15
+    },
     date: {
         type: Date,
         default: new Date
