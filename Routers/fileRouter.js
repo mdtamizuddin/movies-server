@@ -5,7 +5,8 @@ const File = require('../Models/Files')
 router.get('/', (req, res) => {
     File.find({}, (err, data) => {
         if (data) {
-            res.send(data)
+            const newData = data.reverse()
+            res.send(newData)
         } else {
             res.send(err)
         }
