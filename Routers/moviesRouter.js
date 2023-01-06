@@ -49,7 +49,13 @@ router.get('/popular/2023/now', async (req, res) => {
 
 router.get('/category/:name', async (req, res) => {
   const data = await Movies.find({})
-  const category = await data.filter(item => item.categorys.includes(req.params.name))
+  const category = await data.filter(item => item.categorys.toLowerCase().includes(req.params.name.toLowerCase()));
+  console.log(category.length, req.params.name)
+  res.send(category)
+})
+router.get('/genres/:name', async (req, res) => {
+  const data = await Movies.find({})
+  const category = await data.filter(item => item.genre.toLowerCase().includes(req.params.name.toLowerCase()));
   res.send(category)
 })
 
@@ -82,7 +88,7 @@ router.put('/:id', (req, res) => {
       res.status(500).send({ message: "Something went wrong" })
     }
     else {
-      res.send({ message: "Data Is modifyed Success"})
+      res.send({ message: "Data Is modifyed Success" })
     }
   })
 })
