@@ -23,6 +23,7 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
+    
     Email.deleteOne({ _id: req.params.id }, (err, data) => {
         if (data) {
             res.status(200).send({ message: "Data Is Deleted Success", data })

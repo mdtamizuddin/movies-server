@@ -5,13 +5,21 @@ const fileSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    email: {
+    size: {
+        type: Number,
+        required: true
+    },
+    stType: {
         type: String,
         required: true
     },
-    storage: {
-        type: Number,
-        default: 15
+    storageId: {
+        type: String,
+        required: true
+    },
+    link: {
+        type: String,
+        required: true
     },
     date: {
         type: Date,
