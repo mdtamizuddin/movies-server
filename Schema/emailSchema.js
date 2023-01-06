@@ -9,6 +9,10 @@ const emailSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    type: {
+        type: String,
+        required: true
+    },
     size: {
         type: Number,
         default: 15
