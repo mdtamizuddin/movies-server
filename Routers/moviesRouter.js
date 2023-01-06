@@ -60,7 +60,7 @@ router.get('/name/:name', async (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  const { name, title, resulation, trailer, language, format, thumb, categorys, genre, date, actor, duration, story, release } = req.body
+  const { name, title, resulation, trailer, language, format, categorys, genre, date, actor, duration, story, release } = req.body
   Movies.updateOne({ _id: req.params.id }, {
     $set: {
       name: name,

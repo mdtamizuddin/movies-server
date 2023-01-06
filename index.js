@@ -28,6 +28,10 @@ app.use('/api/upload', require('./Routers/uploadImage'))
 // Image Uploading Router
 app.use('/api/movies', require("./Routers/moviesRouter"))
 app.use('/api/categorys', require("./Routers/category"))
+app.use('/api/emails', require("./Routers/emailRouter"))
+app.use('/api/files', require("./Routers/fileRouter"))
+
+
 app.get('/',(req , res) => {
     res.send({message: "Server Is Running"})
 })
