@@ -31,7 +31,7 @@ const movieSchema = new mongoose.Schema({
     },
     trailer: {
         type: String,
-        default: ""
+        required: true
     },
     language: {
         type: String,
